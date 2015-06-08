@@ -23,6 +23,21 @@
     return rtn;
   };
 
+//Manipulate the input data to a format accepted by the LineChart for scatter plot
+var formatData2 = function(data) {
+    var rtn = [];
+    for (var i = 0; i < data['y'].length; i++) {
+      rtn.push({
+        x: data['x'][i],
+        xerr: data['xerr'][i],
+        y: data['y'][i],
+        yerr: data['yerr'][i]
+      });
+    }
+    return rtn;
+  };
+
+
   // Return an array of objects suitable for d3.plotables.LineChart, filled
   // with data generated from the function f, which should return a single
   // number when passed a single number.
